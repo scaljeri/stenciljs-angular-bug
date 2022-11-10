@@ -23,9 +23,8 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
     angularOutputTarget({
-      // componentCorePackage: '@web-components/dist/components',
-      componentCorePackage: '../../../../web-components/dist/components',
-      directivesProxyFile: './../lib-demo/src/libs/stencil-generated/proxies.ts',
+      componentCorePackage: '@web-components/dist/components',
+      directivesProxyFile: './../demo/src/libs/stencil-generated/proxies.ts',
       valueAccessorConfigs: angularValueAccessorBindings,
     }),
   ],
