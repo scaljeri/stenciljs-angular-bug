@@ -10,7 +10,7 @@ import { Components } from '@web-components/dist/components';
 import type { FooEvent as IMyComponentFooEvent } from '@web-components/dist/components';
 export declare interface MyComponent extends Components.MyComponent {
   /**
-   *  
+   *
    */
   treeNodeCheckChanged: EventEmitter<CustomEvent<IMyComponentFooEvent>>;
 
