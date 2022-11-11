@@ -4,10 +4,12 @@ import { WebComponentsModule } from 'src/libs/web-components.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { XyzComponent } from './components/xyz/xyz.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    XyzComponent
   ],
   imports: [
     BrowserModule,

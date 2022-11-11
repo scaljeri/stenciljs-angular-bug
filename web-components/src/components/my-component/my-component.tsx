@@ -1,5 +1,4 @@
 import { Component, Prop, h, Event, EventEmitter } from '@stencil/core';
-import { format } from '../../utils/utils';
 import { FooEvent } from './models';
 
 @Component({
@@ -8,25 +7,14 @@ import { FooEvent } from './models';
   shadow: true,
 })
 export class MyComponent {
-  /**
-   * The first name
-   */
-  @Prop() first: string;
-
-  /**
-   * The middle name
-   */
-  @Prop() middle: string;
-
-  /**
-   * The last name
-   */
-  @Prop() last: string;
+  @Prop() idx: number;
+  @Prop() state: boolean;
+  @Prop() name: string;
 
   @Event( { bubbles: false, composed: true } ) treeNodeCheckChanged: EventEmitter<FooEvent>;
 
   private getText(): string {
-    return format(this.first, this.middle, this.last);
+    return 'yolo'
   }
 
   render() {

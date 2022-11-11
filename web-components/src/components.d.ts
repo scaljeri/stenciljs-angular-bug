@@ -8,20 +8,12 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { FooEvent } from "./components/my-component/models";
 export namespace Components {
     interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+        "idx": number;
+        "name": string;
+        "state": boolean;
     }
     interface WebLucas {
+        "test": string;
     }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
@@ -48,21 +40,13 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+        "idx"?: number;
+        "name"?: string;
         "onTreeNodeCheckChanged"?: (event: MyComponentCustomEvent<FooEvent>) => void;
+        "state"?: boolean;
     }
     interface WebLucas {
+        "test"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;
