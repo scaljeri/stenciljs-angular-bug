@@ -15,9 +15,10 @@
 
 ## Events
 
-| Event       | Description | Type                  |
-| ----------- | ----------- | --------------------- |
-| `xyzChange` |             | `CustomEvent<string>` |
+| Event          | Description | Type                     |
+| -------------- | ----------- | ------------------------ |
+| `xyzChange`    |             | `CustomEvent<IMyData>`   |
+| `xyzChangeXyz` |             | `CustomEvent<IMyData[]>` |
 
 
 ----------------------------------------------

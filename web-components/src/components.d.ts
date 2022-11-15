@@ -6,6 +6,7 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 import { FooEvent } from "./components/my-component/models";
+import { IMyData } from "./components/web-lucas/web-lucas.types";
 export namespace Components {
     interface MyComponent {
         "idx": number;
@@ -51,7 +52,8 @@ declare namespace LocalJSX {
         "state"?: boolean;
     }
     interface WebLucas {
-        "onXyzChange"?: (event: WebLucasCustomEvent<string>) => void;
+        "onXyzChange"?: (event: WebLucasCustomEvent<IMyData>) => void;
+        "onXyzChangeXyz"?: (event: WebLucasCustomEvent<IMyData[]>) => void;
         "test"?: string;
         "value"?: string;
     }

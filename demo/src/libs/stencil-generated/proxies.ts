@@ -35,12 +35,16 @@ export class MyComponent {
   }
 }
 
-
+import type { IMyData as IWebLucasIMyData } from '@web-components/dist/components';
 export declare interface WebLucas extends Components.WebLucas {
   /**
    *  
    */
-  xyzChange: EventEmitter<CustomEvent<string>>;
+  xyzChange: EventEmitter<CustomEvent<IWebLucasIMyData>>;
+  /**
+   *  
+   */
+  xyzChangeXyz: EventEmitter<CustomEvent<IMyData[]>>;
 
 }
 
@@ -59,6 +63,6 @@ export class WebLucas {
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
-    proxyOutputs(this, this.el, ['xyzChange']);
+    proxyOutputs(this, this.el, ['xyzChange', 'xyzChangeXyz']);
   }
 }

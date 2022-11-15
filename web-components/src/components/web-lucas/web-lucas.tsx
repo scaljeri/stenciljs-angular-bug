@@ -1,4 +1,5 @@
 import { Component, Host, h, Prop, Event, EventEmitter, Element } from '@stencil/core';
+import { IMyData } from './web-lucas.types';
 
 @Component({
   tag: 'web-lucas',
@@ -11,14 +12,15 @@ export class WebLucas {
   @Prop() test: string;
   @Prop() value: string;
 
-  @Event({ bubbles: true, composed: true }) xyzChange: EventEmitter<string>;
+  @Event({ bubbles: true, composed: true }) xyzChange: EventEmitter<IMyData>;
+  @Event({ bubbles: true, composed: true }) xyzChangeXyz: EventEmitter<IMyData[]>;
 
   inputEl: HTMLInputElement;
 
   onInput() {
     this.value = this.inputEl.value;
 
-    this.xyzChange.emit(this.value);
+    this.xyzChange.emit({ name: this.value });
   }
 
   componentDidLoad() {
