@@ -14,11 +14,16 @@ export namespace Components {
     }
     interface WebLucas {
         "test": string;
+        "value": string;
     }
 }
 export interface MyComponentCustomEvent<T> extends CustomEvent<T> {
     detail: T;
     target: HTMLMyComponentElement;
+}
+export interface WebLucasCustomEvent<T> extends CustomEvent<T> {
+    detail: T;
+    target: HTMLWebLucasElement;
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -46,7 +51,9 @@ declare namespace LocalJSX {
         "state"?: boolean;
     }
     interface WebLucas {
+        "onXyzChange"?: (event: WebLucasCustomEvent<string>) => void;
         "test"?: string;
+        "value"?: string;
     }
     interface IntrinsicElements {
         "my-component": MyComponent;

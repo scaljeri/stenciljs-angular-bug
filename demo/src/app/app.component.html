@@ -1,3 +1,3 @@
-<web-lucas>yolo</web-lucas>
-
-<my-component [name]="10"></my-component>
+<form [formGroup]="myForm">
+  <web-lucas (xyzChange)="onChange($event)" formControlName="email">yolo</web-lucas>
+</form>

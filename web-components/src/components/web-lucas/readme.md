@@ -10,6 +10,14 @@
 | Property | Attribute | Description | Type     | Default     |
 | -------- | --------- | ----------- | -------- | ----------- |
 | `test`   | `test`    |             | `string` | `undefined` |
+| `value`  | `value`   |             | `string` | `undefined` |
+
+
+## Events
+
+| Event       | Description | Type                  |
+| ----------- | ----------- | --------------------- |
+| `xyzChange` |             | `CustomEvent<string>` |
 
 
 ----------------------------------------------

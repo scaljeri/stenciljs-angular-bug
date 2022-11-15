@@ -10,6 +10,7 @@ describe('web-lucas', () => {
     expect(page.root).toEqualHtml(`
       <web-lucas>
         <mock:shadow-root>
+
           <slot></slot>
         </mock:shadow-root>
       </web-lucas>

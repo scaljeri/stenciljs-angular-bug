@@ -10,7 +10,7 @@ import { Components } from '@web-components/dist/components';
 import type { FooEvent as IMyComponentFooEvent } from '@web-components/dist/components';
 export declare interface MyComponent extends Components.MyComponent {
   /**
-   *
+   *  
    */
   treeNodeCheckChanged: EventEmitter<CustomEvent<IMyComponentFooEvent>>;
 
@@ -36,22 +36,29 @@ export class MyComponent {
 }
 
 
-export declare interface WebLucas extends Components.WebLucas {}
+export declare interface WebLucas extends Components.WebLucas {
+  /**
+   *  
+   */
+  xyzChange: EventEmitter<CustomEvent<string>>;
+
+}
 
 @ProxyCmp({
   defineCustomElementFn: undefined,
-  inputs: ['test']
+  inputs: ['test', 'value']
 })
 @Component({
   selector: 'web-lucas',
   changeDetection: ChangeDetectionStrategy.OnPush,
   template: '<ng-content></ng-content>',
-  inputs: ['test']
+  inputs: ['test', 'value']
 })
 export class WebLucas {
   protected el: HTMLElement;
   constructor(c: ChangeDetectorRef, r: ElementRef, protected z: NgZone) {
     c.detach();
     this.el = r.nativeElement;
+    proxyOutputs(this, this.el, ['xyzChange']);
   }
 }

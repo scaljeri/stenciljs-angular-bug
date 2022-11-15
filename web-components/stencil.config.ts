@@ -3,7 +3,14 @@ import { angularOutputTarget, ValueAccessorConfig } from '@stencil/angular-outpu
 import { sass } from '@stencil/sass';
 
 // props binding
-const angularValueAccessorBindings: ValueAccessorConfig[] = [];
+const angularValueAccessorBindings: ValueAccessorConfig[] = [
+  {
+    elementSelectors: ['web-lucas'],
+    event: 'xyzChange',
+    targetAttr: 'value',
+    type: 'text'
+  }
+];
 
 export const config: Config = {
   namespace: 'web-components',

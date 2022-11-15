@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { WebComponentsModule } from 'src/libs/web-components.module';
 
@@ -14,7 +15,8 @@ import { XyzComponent } from './components/xyz/xyz.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WebComponentsModule
+    WebComponentsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
